@@ -36,9 +36,10 @@ export const add_interesado= async (req, res)=>{
 
 export const get_interesado= async (req, res)=>{
     try {
-        
+        const interesados=await Interesado.find();
+        return res.json(interesados)
     } catch (error) {
-        
+        return res.status(500).json({error:"Error interno de servidor"})
     }
 };
 

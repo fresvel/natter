@@ -38,15 +38,24 @@ client.on('qr', (qr) => {
 // Start your client
 client.initialize();
 
+/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 export const send_whatsapp = async (req, res) => {
-  console.log(req.body);
+  console.log(req.body.mensaje);
 
   await req.body.contactos.forEach(async numero => {
-    const result= await client.sendMessage(numero+"@c.us",req.body.message)
-    console.log("Mensaje enviado")
-    res.json({result})
-    
+      if (numero.startsWith('+')){
+        numero=numero.substring(1)+"@c.us"
+      }else if (numero.startsWith('09')){
+        numero="593"+numero.substring(1)+"@c.us"
+      }else{
+        console.log("Invalid number: " + numero)
+      }
+      const result=await client.sendMessage(numero,req.body.mensaje)
+      console.log("Mensaje enviado: ");
+      console.log(result)    
   });
+  res.json({ok:true})
 
 
 }

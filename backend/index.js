@@ -13,7 +13,9 @@ app.use(express.json());
 app.use("/natter/v1/estudiantes", estudiantes);
 app.use(express.static("public"));
 
-app.use("/natter/v1/interesados",interesados)
+app.use("/natter/v1/interesados",interesados);
+
+app.use("/natter/v1/whatsapp", whatsapp);
 
 app.listen(PORT, () =>{
     console.log("Server initialized on port " + PORT+ "Access via http://localhost:"+PORT+"/natter/v1/estudiantes/test");

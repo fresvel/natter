@@ -1,9 +1,9 @@
 <template>
-<SpaceContainer/>
+<SendWhatsapp/>
 </template>
 
 <script setup>
-import SpaceContainer from "./components/SpaceContainer.vue"
+import SendWhatsapp from './components/whatsapp/SendWhatsapp.vue'
 
 </script>
 

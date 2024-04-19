@@ -7,7 +7,7 @@ export const add_interesado= async (req, res)=>{
         const registros=[]
         const result=[]
         fs.createReadStream("/home/fresvel/Documentos/Pucese/natter/backend/controllers/Inscritos.csv")
-            .pipe(csv({ separator: ';' }))
+            .pipe(csv({ separator: ';', encoding: 'utf-8'}))
             .on("data",(data)=>registros.push(data))
             .on("end",()=>{
                 registros.forEach(async (el)=>{
@@ -17,6 +17,7 @@ export const add_interesado= async (req, res)=>{
                             estudiante:{},
                             familiar:{}
                         }
+                        console.log("****")
                         console.log(el)
                         new_reg.estudiante=el
                         const interesado =new Interesado(new_reg);

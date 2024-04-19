@@ -53,7 +53,7 @@ export const send_whatsapp = async (req, res) => {
       }
       const result=await client.sendMessage(numero,req.body.mensaje)
       console.log("Mensaje enviado: ");
-      console.log(result)    
+      //console.log(result)    
   });
   res.json({ok:true})
 

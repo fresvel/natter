@@ -1,3 +1,38 @@
-2024/04/19-14:57:14.906 d4b8 Reusing MANIFEST /home/fresvel/Documentos/Pucese/natter/backend/.wwebjs_auth/session-CLIENT_ID/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/04/19-14:57:14.906 d4b8 Recovering log #892
-2024/04/19-14:57:14.908 d4b8 Reusing old log /home/fresvel/Documentos/Pucese/natter/backend/.wwebjs_auth/session-CLIENT_ID/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000892.log 
+2024/04/19-17:25:14.880 2dd48 Reusing MANIFEST /home/fresvel/Documentos/Pucese/natter/backend/.wwebjs_auth/session-CLIENT_ID/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/19-17:25:14.881 2dd48 Recovering log #976
+2024/04/19-17:25:14.995 2dd48 Reusing old log /home/fresvel/Documentos/Pucese/natter/backend/.wwebjs_auth/session-CLIENT_ID/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000976.log 
+2024/04/19-17:25:31.598 2dd47 Level-0 table #993: started
+2024/04/19-17:25:31.622 2dd47 Level-0 table #993: 1227291 bytes OK
+2024/04/19-17:25:31.623 2dd47 Delete type=0 #976
+2024/04/19-17:25:34.979 2dd47 Compacting 1@0 + 1@1 files
+2024/04/19-17:25:35.028 2dd47 Generated table #994@0: 25129 keys, 527501 bytes
+2024/04/19-17:25:35.031 2dd47 Generated table #995@0: 921 keys, 23823 bytes
+2024/04/19-17:25:35.031 2dd47 Compacted 1@0 + 1@1 files => 551324 bytes
+2024/04/19-17:25:35.033 2dd47 compacted to: files[ 0 2 18 0 0 0 0 ]
+2024/04/19-17:25:35.033 2dd47 Delete type=2 #979
+2024/04/19-17:25:35.033 2dd47 Delete type=2 #993
+2024/04/19-17:25:35.142 2dd84 Compacting 1@1 + 10@2 files
+2024/04/19-17:25:35.300 2dd84 Generated table #996@1: 64665 keys, 2253121 bytes
+2024/04/19-17:25:35.371 2dd84 Generated table #997@1: 4447 keys, 2159031 bytes
+2024/04/19-17:25:35.397 2dd84 Generated table #998@1: 3951 keys, 2159960 bytes
+2024/04/19-17:25:35.419 2dd84 Generated table #999@1: 2701 keys, 2146119 bytes
+2024/04/19-17:25:35.442 2dd84 Generated table #1000@1: 4187 keys, 2154740 bytes
+2024/04/19-17:25:35.475 2dd84 Generated table #1001@1: 18496 keys, 2174322 bytes
+2024/04/19-17:25:35.525 2dd84 Generated table #1002@1: 29665 keys, 2256997 bytes
+2024/04/19-17:25:35.572 2dd84 Generated table #1003@1: 28897 keys, 2234481 bytes
+2024/04/19-17:25:35.600 2dd84 Generated table #1004@1: 9150 keys, 2132415 bytes
+2024/04/19-17:25:35.633 2dd84 Generated table #1005@1: 25552 keys, 2154297 bytes
+2024/04/19-17:25:35.640 2dd84 Generated table #1006@1: 9010 keys, 154661 bytes
+2024/04/19-17:25:35.640 2dd84 Compacted 1@1 + 10@2 files => 21980144 bytes
+2024/04/19-17:25:35.641 2dd84 compacted to: files[ 0 1 19 0 0 0 0 ]
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #980
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #981
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #983
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #985
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #987
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #989
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #994
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #982
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #984
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #986
+2024/04/19-17:25:35.641 2dd84 Delete type=2 #988

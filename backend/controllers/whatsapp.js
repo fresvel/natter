@@ -1,8 +1,10 @@
 import whatsapp from "whatsapp-web.js"
 import qrcode from "qrcode-terminal"
+import fs from "fs"
+import { body } from "express-validator";
 
 
-const { Client, LocalAuth } = whatsapp;
+const { Client, LocalAuth, MessageMedia } = whatsapp;
 
 // Create a new client instance
 const wwebVersion = '2.2407.3';
@@ -41,21 +43,36 @@ client.initialize();
 /**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 export const send_whatsapp = async (req, res) => {
-  console.log(req.body.mensaje);
+  console.log(req.body);
+  await req.body.contactos.forEach(async contacto => {
+    let numero=contacto.number;
+    const mensaje=req.body.saludo.replace(/##/g, contacto.name)+"\n"+req.body.mensaje;
 
-  await req.body.contactos.forEach(async numero => {
+
+    
       if (numero.startsWith('+')){
         numero=numero.substring(1)+"@c.us"
       }else if (numero.startsWith('09')){
         numero="593"+numero.substring(1)+"@c.us"
+      }else if (numero.startsWith('9')){
+
       }else{
         console.log("Invalid number: " + numero)
       }
-      const result=await client.sendMessage(numero,req.body.mensaje)
+      //const result=await client.sendMessage("593983200911@c.us",mensaje)
       console.log("Mensaje enviado: ");
       //console.log(result)    
   });
-  res.json({ok:true})
+  fs.readFile("controllers/Image.jpeg", (err, data)=>{
+    if(err){
+      console.log("Error: " + err)
+      return
+    }
+    const base64Image=Buffer.from(data).toString('base64');
+    const media=new MessageMedia("image/jpeg",base64Image)
+    const result=client.sendMessage("593983200911@c.us",media)
+    res.json({ok:true})
+  })
 
 
 }

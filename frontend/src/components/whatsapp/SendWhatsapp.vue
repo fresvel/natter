@@ -1,33 +1,58 @@
 <template>
-<h1>ENVIAR MENSAJE</h1>
-<label for="saludo">Saludo</label>
-<textarea id="saludo" v-model="saludo" cols="30" rows="10"> </textarea>
-<label for="mensaje">Mensaje</label>
-<textarea name="" id="mensaje" v-model="mensaje" cols="30" rows="10"></textarea>
 
-<button @click="getInteresados">Contactos</button>
-<button @click="sendMessage">ENVIAR</button>
+<div class="container">
 
-<h1>{{ body.mensaje }}</h1>
+    <div class="row">
+        <div class="col-4">
+            <h5>Contactos</h5>
+            <button @click="getInteresados" class="btn bg-primary btn-lg">Contactos</button>
+        </div>
+        <div class="col-8 bg-primary-subtle">
+            <h5>Campo del Mensaje</h5>
+            <div class="mb-3">
+                <label for="saludo" class="form-label">Saludo</label>
+                <textarea id="saludo" class="form-control" v-model="body.saludo" cols="30" rows="5"> </textarea>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" v-model="body.mensaje" cols="30" rows="10"></textarea>
+                <button @click="sendMessage" class="btn bg-success-subtle btn-lg mt-3">ENVIAR</button>
+            </div>
+        </div>    
+    </div>
+    <div class="d-flex justify-content-around">
+        <div>
+            <p>Hola 1</p>
+        </div>
+        <div>
+            <p>Hola 2</p>
+        </div>
+        <div>
+            <p>Hola 3</p>
+        </div>
+    </div>
+
+</div>
+
 
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue';
+import {reactive} from 'vue';
 import axios from 'axios';
-const mensaje=ref("")
-const saludo=ref("")
 
 const body=reactive({
     contactos:[],
-    mensaje:""
+    mensaje:"",
+    saludo:""
 })
 
 const sendMessage=async ()=>{
     try {
         const response = await axios.post('http://localhost:3050/natter/v1/whatsapp', {
             mensaje: body.mensaje,
-            contactos: body.contactos
+            contactos: body.contactos,
+            saludo: body.saludo
         });
         console.log('Respuesta del servidor:', response.data);
     } catch (error) {
@@ -38,12 +63,11 @@ const sendMessage=async ()=>{
 const getInteresados= async ()=>{
     try {
         const response = await axios.get("http://localhost:3050/natter/v1/interesados");
-        console.log(response.data);
-
         response.data.forEach(el =>{
-            body.mensaje=computed(()=> saludo.value+el.estudiante.nombre+" "+el.estudiante.apellido+"\n"+mensaje.value)
-        })
 
+            body.contactos.push({name:el.estudiante.nombre+" "+el.estudiante.apellido,number:el.estudiante.celular})
+        })
+        console.log(body);
 
 
     } catch (error) {
